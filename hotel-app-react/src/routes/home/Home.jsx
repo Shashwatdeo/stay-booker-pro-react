@@ -31,7 +31,7 @@ const Home = () => {
   });
 
   // State for storing available cities
-  const [availableCities, setAvailableCities] = useState([]);
+  const [availableCities] = useState([]);
 
   const [filteredTypeheadResults, setFilteredTypeheadResults] = useState([]);
 

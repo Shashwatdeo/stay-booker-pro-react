@@ -21,7 +21,7 @@ import BookingConfirmation from 'routes/booking-confimation/BookingConifrmation'
 //   makeServer();
 // }
 
-const server = makeServer();
+// const server = makeServer();
 // expose a global flag so runtime code can detect that Mirage is active
 if (typeof window !== 'undefined') window.__MIRAGE_ACTIVE = true;
 

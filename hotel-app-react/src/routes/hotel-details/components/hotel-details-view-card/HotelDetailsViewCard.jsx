@@ -44,6 +44,8 @@ const HotelDetailsViewCard = ({ hotelDetails = {} }) => {
     // only fetch reviews when we have a valid hotelCode
     if (!hotelDetails || !hotelDetails.hotelCode) return;
 
+    const hotelCode = hotelDetails.hotelCode;
+
     setReviewData({
       isLoading: true,
       data: [],
@@ -51,7 +53,7 @@ const HotelDetailsViewCard = ({ hotelDetails = {} }) => {
 
     const fetchHotelReviews = async () => {
       const response = await networkAdapter.get(
-        `/api/hotel/${hotelDetails.hotelCode}/reviews`,
+        `/api/hotel/${hotelCode}/reviews`,
         {
           currentPage: currentReviewsPage,
         }
@@ -66,7 +68,7 @@ const HotelDetailsViewCard = ({ hotelDetails = {} }) => {
       }
     };
     fetchHotelReviews();
-  }, [hotelDetails && hotelDetails.hotelCode, currentReviewsPage]);
+  }, [hotelDetails, currentReviewsPage]);
 
   return (
     <div className="flex items-start justify-center flex-wrap md:flex-nowrap container mx-auto p-4">

@@ -358,8 +358,7 @@ const HotelsSearch = () => {
         });
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedFiltersState, currentResultsPage, sortByFilterValue]);
+  }, [selectedFiltersState, currentResultsPage, sortByFilterValue, fetchHotels, locationInputValue]);
 
   // Fetch hotels when location input value changes
   useEffect(() => {
