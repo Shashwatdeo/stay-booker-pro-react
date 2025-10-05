@@ -214,7 +214,7 @@ const HotelsSearch = () => {
    * @returns {Promise<void>}
    * @async
    */
-  const fetchHotels = async (filters) => {
+  const fetchHotels = useCallback(async (filters) => {
     setHotelsResults({
       isLoading: true,
       data: [],
@@ -244,7 +244,7 @@ const HotelsSearch = () => {
         pagination,
       });
     }
-  };
+  }, [currentResultsPage, sortByFilterValue]);
 
   const fetchAvailableCities = async () => {
     const availableCitiesResponse = await networkAdapter.get(
