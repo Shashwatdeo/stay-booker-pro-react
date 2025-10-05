@@ -35,7 +35,7 @@
     "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,json,css,md}'",
     "lint:check": "eslint .",
     "lint-fix": "lint-staged",
-    "prepare": "husky install",
+    "prepare": "node -e \"if (require('fs').existsSync('.git')) { require('child_process').execSync('husky install', { stdio: 'inherit' }); }\"",
     "cypress:open": "cypress open",
     "cypress:run": "npx cypress run --e2e && npx cypress run --component"
   },
