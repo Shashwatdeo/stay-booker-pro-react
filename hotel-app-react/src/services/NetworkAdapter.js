@@ -4,7 +4,7 @@
 class NetworkAdapter {
   static #API_CONFIG = {
     MIRAGE: window.location.origin,
-    EXPRESS: 'http://localhost:4000',
+    EXPRESS: 'https://stay-booker-pro-react.onrender.com',
   };
   // Determine API base URL.
   // Priority:
