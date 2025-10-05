@@ -134,7 +134,7 @@ const HotelsSearch = () => {
     });
   };
 
-  const getActiveFilters = () => {
+  const getActiveFilters = useCallback(() => {
     const filters = {};
     selectedFiltersState.forEach((category) => {
       const selectedValues = category.filters
@@ -149,7 +149,7 @@ const HotelsSearch = () => {
       return filters;
     }
     return null;
-  };
+  }, [selectedFiltersState]);
 
   // Toggles the visibility of the date picker
   const onDatePickerIconClick = () => {
@@ -358,7 +358,7 @@ const HotelsSearch = () => {
         });
       }
     }
-  }, [selectedFiltersState, currentResultsPage, sortByFilterValue, fetchHotels, locationInputValue]);
+  }, [selectedFiltersState, currentResultsPage, sortByFilterValue, fetchHotels, locationInputValue, getActiveFilters]);
 
   // Fetch hotels when location input value changes
   useEffect(() => {

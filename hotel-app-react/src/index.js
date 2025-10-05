@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './routes/home/Home';
 import { AuthProvider } from './contexts/AuthContext';
-import { makeServer } from './mirage/mirageServer';
+// import { makeServer } from './mirage/mirageServer';
 import HotelDetails from './routes/hotel-details/HotelDetails';
 import Login from './routes/login/Login';
 import Register from './routes/register/Register';
