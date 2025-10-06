@@ -315,6 +315,7 @@ const HotelsSearch = () => {
   };
 
   // Fetch available cities, filters, and initial hotels on mount
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (initialFetchDone.current) return;
 
