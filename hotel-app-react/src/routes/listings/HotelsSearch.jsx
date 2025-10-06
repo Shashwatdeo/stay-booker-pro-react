@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import GlobalSearchBox from 'components/global-search-box/GlobalSearchbox';
 import ResultsContainer from 'components/results-container/ResultsContainer';
 import { networkAdapter } from 'services/NetworkAdapter';
@@ -71,6 +71,9 @@ const HotelsSearch = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const location = useLocation();
+
+  // Ref to track if initial fetch has been done
+  const initialFetchDone = useRef(false);
 
   // Options for sorting filter
   const sortingFilterOptions = [
@@ -313,6 +316,9 @@ const HotelsSearch = () => {
 
   // Fetch available cities, filters, and initial hotels on mount
   useEffect(() => {
+    if (initialFetchDone.current) return;
+
+    initialFetchDone.current = true;
     fetchAvailableCities();
     getVerticalFiltersData();
     // Initial fetch to avoid blank state while filters load
